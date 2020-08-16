@@ -140,7 +140,8 @@ video {
   list-style: none;
 }
 
-.unmute .stop {
+.unmute,
+.stop {
   color: #cc3b33;
 }
 
