@@ -1,8 +1,11 @@
 const path = require("path"); // for joining paths
 const express = require("express");
+const compression = require("compression");
 const { v4: uuidv4 } = require("uuid");
 ////////////////----------------------------------------
 const app = express();
+app.use(compression());
+
 const server = require("http").Server(app);
 // requiring socket.io below server as it needs server as an argument
 const io = require("socket.io")(server);

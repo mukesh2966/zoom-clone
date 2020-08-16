@@ -21,7 +21,7 @@ $("ul").append(
 var peer = new Peer(undefined, {
   path: "/peerjs", // defined in server.js
   host: "/",
-  port: "3030",
+  port: "443",
 });
 
 const videoGrid = document.getElementById("video-grid");
