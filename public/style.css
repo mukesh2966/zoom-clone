@@ -17,6 +17,7 @@ body {
 
 video {
   height: 30vh;
+  min-height: 220px;
   width: 400px;
   max-width: 50vw;
   object-fit: cover;
@@ -41,12 +42,15 @@ video {
   flex-grow: 1;
   background-color: black;
   display: flex;
+  min-height: min-content;
+  min-width: min-content;
+  object-fit: contain;
   justify-content: center; /*for horizontal centering the videogrid div*/
   align-items: center; /*for vertical centering the videogrid div*/
   overflow: scroll;
 }
 
-/* Hide scrollbar for Chrome, Safari and Opera */
+/* Hide scrollbar for Chrome, Safari and Opera*/
 .main__videos::-webkit-scrollbar {
   display: none;
 }
@@ -58,7 +62,8 @@ video {
 }
 
 #video-grid {
-  overflow: scroll;
+  /* overflow: scroll; */
+  overflow: auto;
 }
 
 /* Hide scrollbar for Chrome, Safari and Opera */
@@ -221,21 +226,63 @@ i > b {
   /* flex: 0; */
 }
 
+span {
+  line-height: 1.2;
+}
+
+.red span,
+.video_button span {
+  text-align: center;
+}
+
 .not_hide_class {
   flex: 1;
 }
 
 @media only screen and (max-width: 700px) {
+  #video-grid {
+    flex-direction: column;
+    padding-top: 220px;
+    height: 440px;
+    overflow: scroll;
+  }
+
+  video {
+    max-width: 80vw;
+    min-height: 220px;
+  }
+
+  .main__controls__button {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 3px 4px;
+    min-width: 80px;
+    cursor: pointer;
+  }
+
   .Security,
   .Participants {
     display: none;
   }
 
-  #video-grid {
-    flex-direction: column;
+  .chat_button,
+  .mute_button {
+    min-width: 60px;
   }
 
-  video {
-    max-width: 80vw;
-  }
+  /* .main__videos {
+    display: block;
+    margin: auto auto;
+    padding: 0 10vw;
+  } */
+  /* 
+  #video-grid {
+    height: 100%;
+  } */
+}
+
+video {
+  padding: 2px;
 }
