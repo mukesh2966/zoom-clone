@@ -21,7 +21,7 @@ $("ul").append(
 var peer = new Peer(undefined, {
   path: "/peerjs", // defined in server.js
   host: "/",
-  port: "443",
+  port: "3030",
 });
 
 const videoGrid = document.getElementById("video-grid");
@@ -136,6 +136,11 @@ const scrollToBottom = () => {
   d.scrollTop = d.scrollHeight - d.clientHeight;
 };
 
+const scrollToRight = () => {
+  let d = document.querySelector(".main");
+  d.scrollLeft = d.scrollWidth - d.clientWidth;
+};
+
 ///////////////////-----------MUTE-UNMUTE OUR AUDIO-----------------------------------------------///////////////////////
 const muteUnmute = () => {
   // getAudioTracks() method gives a list of objects of AudioTracks present in our stream
@@ -206,17 +211,18 @@ socket.on("person-left", (name2) => {
 document.querySelector(".hide_chat").addEventListener("click", (e) => {
   document.querySelector(".main__right").classList.toggle("hide_class");
   document.querySelector(".main__left").classList.toggle("not_hide_class");
+  scrollToRight();
 });
 
 window.addEventListener("resize", () => {
   let w = document.documentElement.clientWidth;
-  if (w < 700) {
-    document.querySelector(".main__right").classList.add("hide_class");
-    document.querySelector(".main__left").classList.add("not_hide_class");
+  if (w > 700) {
+    document.querySelector(".main__right").classList.remove("hide_class");
+    document.querySelector(".main__left").classList.remove("not_hide_class");
   }
 });
 
-if (document.documentElement.clientWidth < 700) {
-  document.querySelector(".main__right").classList.add("hide_class");
-  document.querySelector(".main__left").classList.add("not_hide_class");
+if (document.documentElement.clientWidth > 700) {
+  document.querySelector(".main__right").classList.remove("hide_class");
+  document.querySelector(".main__left").classList.remove("not_hide_class");
 }
