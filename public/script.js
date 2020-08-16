@@ -21,7 +21,7 @@ $("ul").append(
 var peer = new Peer(undefined, {
   path: "/peerjs", // defined in server.js
   host: "/",
-  port: "447", // 447 for heroku and 3030 as default for running in localhost as server is set to listen in 3030
+  port: "443", // 443 for heroku and 3030 as default for running in localhost as server is set to listen in 3030
 });
 
 const videoGrid = document.getElementById("video-grid");
