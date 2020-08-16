@@ -1,0 +1,216 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+#video-grid {
+  display: flex;
+  /*flex-direction: column; ///testing*/
+  justify-content: center;
+  /* max-width: 430px; */
+  /* align-items: center; */
+}
+
+video {
+  height: 300px;
+  width: 400px;
+  object-fit: cover;
+}
+
+.main {
+  height: 100vh;
+  display: flex;
+}
+
+.main__left {
+  flex: 0.8;
+  display: flex;
+  flex-direction: column;
+}
+
+.main__right {
+  flex: 0.2;
+}
+
+.main__videos {
+  flex-grow: 1;
+  background-color: black;
+  display: flex;
+  justify-content: center; /*for horizontal centering the videogrid div*/
+  align-items: center; /*for vertical centering the videogrid div*/
+  overflow: scroll;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.main__videos::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.main__videos {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.main__controls {
+  display: flex;
+  background-color: #1c1e20;
+  color: #d2d2d2;
+  padding: 5px;
+  justify-content: space-between;
+}
+
+.main__controls__block {
+  display: flex;
+}
+.main__controls__button {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 8px 10px;
+  min-width: 80px;
+  cursor: pointer;
+}
+
+.main__controls__button:hover {
+  background-color: #343434;
+  border-radius: 5px;
+}
+
+.main__controls__button > i {
+  font-size: 20px;
+}
+
+.leave_meeting {
+  color: #eb534b;
+}
+
+.main__right {
+  display: flex;
+  flex-direction: column;
+  background-color: #242324;
+  border-left: 1px solid #3d3d42;
+}
+
+.main__header {
+  color: #f5f5f5;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid #3d3d42;
+}
+
+.main__chat_window {
+  flex-grow: 1;
+  overflow-y: scroll;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.main__chat_window::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.main__chat_window {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.main__message_container {
+  padding: 22px 12px;
+  display: flex;
+}
+
+.main__message_container > input {
+  flex-grow: 1;
+  background-color: transparent;
+  border: none;
+  color: #f5f5f5;
+}
+
+.main__message_container > input:focus {
+  outline: none;
+  border: none;
+}
+
+.messages {
+  color: #f5f5f5;
+  list-style: none;
+}
+
+.unmute .stop {
+  color: #cc3b33;
+}
+
+.main__header > h6 {
+  font-size: 1.5rem;
+  padding-top: 10px;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  background-color: #000000ef;
+  border-radius: 5px;
+  padding: 2px 2px 5px 5px;
+  margin-left: 5px;
+  margin-right: 8px;
+  margin-bottom: 10px;
+}
+
+.entry_div {
+  display: flex;
+  justify-content: center;
+}
+
+#entered {
+  background-color: white !important;
+  color: black !important;
+  text-align: center;
+  border-radius: 15px;
+  display: flex;
+  width: 75%;
+  justify-content: center;
+}
+
+li > i {
+  padding-top: 4px;
+  padding-left: 4px;
+  padding-right: 8px;
+  padding-bottom: 4px;
+  display: flex;
+  border-radius: 3px;
+}
+
+i > b {
+  padding-left: 4px;
+  border-radius: 3px;
+  color: grey;
+  flex-grow: 1;
+}
+
+.hide_class {
+  display: none;
+  /* flex: 0; */
+}
+
+.not_hide_class {
+  flex: 1;
+}
+
+@media only screen and (max-width: 700px) {
+  .Security,
+  .Participants {
+    display: none;
+  }
+
+  #video-grid {
+    flex-direction: column;
+  }
+}
